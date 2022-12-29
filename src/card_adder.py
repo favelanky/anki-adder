@@ -11,7 +11,7 @@ def add_translation(word, translation_tuple, synonyms):
                 f.write(",")
         f.write("<br>")
         f.write("<br>")
-        color = '<b style="background-color: #ffe100; color: #181818">'
+        color = '<b style="background-color: #ffe100; color: #373737">'
         f.write(f'{examples[0].replace(word, color+word+"</b>")}<br>')
         f.write(f'{examples[1].replace(word, color+word+"</b>")}')
         f.write("~")

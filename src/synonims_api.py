@@ -103,7 +103,7 @@ class ReversoContextAPI():
         soup = self.response(url)
         translation = soup.find_all(class_="display-term")
         examples = soup.find_all(class_="src ltr")
-        return [tr.text for tr in translation], [ex.text[13:-2] for ex in examples]
+        return [tr.text for tr in translation], [ex.text[13:-1] for ex in examples]
 
     def response(self, url) -> BeautifulSoup:
         """Returns html page"""
@@ -112,6 +112,6 @@ class ReversoContextAPI():
 
 
 var = ReversoContextAPI(source_lang="en", target_lang="ru")
-var.sentence = "leeched"
+var.sentence = "leech"
 print(var.get_synonyms())
 print(var.get_translation())
