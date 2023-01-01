@@ -1,5 +1,3 @@
-import json
-
 import requests
 from bs4 import BeautifulSoup
 
@@ -109,9 +107,3 @@ class ReversoContextAPI():
         """Returns html page"""
         response = requests.get(url=url, headers=HEADERS)
         return BeautifulSoup(response.text, "html.parser")
-
-
-var = ReversoContextAPI(source_lang="en", target_lang="ru")
-var.sentence = "leech"
-print(var.get_synonyms())
-print(var.get_translation())
