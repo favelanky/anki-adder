@@ -3,12 +3,14 @@ import pyperclip
 from threading import Thread
 from threading import Event
 from synonims_api import ReversoContextAPI
+import notification
 import card_adder
 
 
 def add_card():
     API = ReversoContextAPI(source_lang="en", target_lang="ru")
-    API.sentence = word
+    API.sentence = word.capitalize()
+    notification.notify(API.sentence, API.get_translation(), API.get_synonyms())
     card_adder.add_card(API.sentence, API.get_translation(), API.get_synonyms())
 
 
@@ -23,7 +25,7 @@ def add_wait():
 
 
 def wait_key():
-    keyboard.add_hotkey('ctrl+s', signal)
+    keyboard.add_hotkey('alt+s', signal)
     keyboard.wait()
 
 
