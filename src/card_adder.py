@@ -1,9 +1,6 @@
 def add_card(word, translation_tuple, synonyms):
     """Function for adding word to Anki"""
     translations, examples = translation_tuple
-    print(word)
-    print(translations)
-    print(examples)
     with open("D:\\PyCharmProjects\\anki_adder\\src\\test.txt", "a", encoding='UTF-8') as f:
         f.write(f"<b>{word}</b> :")
         for i in range(min(5, len(synonyms))):
@@ -14,7 +11,7 @@ def add_card(word, translation_tuple, synonyms):
                 f.write(",")
         f.write("<br>")
         f.write("<br>")
-        color = '<b style="background-color: #ffe100; color: #373737">'
+        color = '<b style="background-color: #c5ba00; color: #373737">'
         f.write(f'{examples[0].replace(word, color + word + "</b>")}<br>')
         f.write(f'{examples[1].replace(word, color + word + "</b>")}')
         f.write("~")
