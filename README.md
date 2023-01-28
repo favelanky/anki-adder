@@ -1,4 +1,3 @@
 # anki-adder
 
-
-ok ok
+Frozen project about automatically adding cards to the Anki app.
